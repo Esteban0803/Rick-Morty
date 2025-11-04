@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import CharactersPage from './CharactersPage';
+import CharacterInfo from './CharacterInfo';
 
-function App() {
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Bienvenido a la Pagina de Ricardo y Moricio</h1>
+      <h2>Deleitese con todos y cada uno de los... ¡¿826 personajes?!</h2>
+      <h3>¡¿En que momento dibujaron tanto?!</h3>
+     
+      <Routes>
+        <Route path='/' element={<CharactersPage page={1} />} />
+        <Route path='/character/:id' element={<CharacterInfo />} />
+      </Routes>
     </div>
   );
 }
